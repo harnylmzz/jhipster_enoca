@@ -1,0 +1,25 @@
+LONG_TEXT = 1023
+
+entity Company {
+	name String required
+	mail String maxlength(LONG_TEXT)
+	website String required
+	phone String required
+}
+
+entity Employee {
+	firstName String required
+	lastName String required
+    identityNumber String required
+	phone String required
+}
+
+relationship OneToMany {
+    Company{Employee} to Employee{Company required}
+}
+
+filter *
+service * with serviceImpl
+paginate * with pagination
+
+microservice all with enocaCore

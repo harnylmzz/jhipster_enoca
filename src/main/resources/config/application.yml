@@ -194,11 +194,11 @@ spring:
       client:
         provider:
           oidc:
-            issuer-uri: http://localhost:9080/realms/jhipster
+            issuer-uri: http://localhost:8080/auth/realms/HospitalManagement
         registration:
           oidc:
-            client-id: internal
-            client-secret: internal
+            client-id: admin
+            client-secret: admin
             scope: openid, profile, email, offline_access # last one for refresh tokens
 
 server:
